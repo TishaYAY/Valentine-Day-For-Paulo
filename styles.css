@@ -1,0 +1,139 @@
+/* Resetting default margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f4f4;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Styling the card */
+.card {
+    width: 60vw;
+    height: 60vh;
+    background: #f8f3f3;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Content area of the card */
+.content {
+    z-index: 2;
+}
+
+.question {
+    font-size: 2.5rem;
+    color: #6a4f4b;
+    margin-bottom: 20px;
+}
+
+#name {
+    color: #ff9a8b;
+}
+
+.buttons button {
+    background-color: #ffb6b9;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+.yes {
+    background-color: #ffb3c1;
+}
+
+.no {
+    background-color: #ff8c8c;
+}
+
+.yes:hover {
+    background-color: #ff99a6;
+}
+
+.no:hover {
+    background-color: #ff6666;
+}
+
+/* Popup message for the "No" response */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 15px;
+    display: none;
+    text-align: center;
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) rotate(5deg); }
+    50% { transform: translate(-50%, -50%) rotate(-5deg); }
+    75% { transform: translate(-50%, -50%) rotate(5deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* Heart animations */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff9a8b;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: float 2s infinite ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-200px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
